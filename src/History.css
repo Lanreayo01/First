@@ -1,0 +1,30 @@
+.back-button{
+    
+}
+.history-top-section{
+    padding-left: 41px;
+    padding-top: 60px;
+    display: flex;
+    gap: 110px;
+}
+.History{
+    height: 100vh;
+}
+    .h2{
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        font-style: normal;
+    }
+.history-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.history-main{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
