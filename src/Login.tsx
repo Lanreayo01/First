@@ -3,8 +3,10 @@ import chef from './assets/gourmet.gif'
 import './Login.css'
 import { Link } from 'react-router-dom'
 import GeneralInput from './GeneralInput'
+import { auth } from './FireBaseConfig/FireBase'
+import {createUserWithEmailAndPassword} from 'firebase/auth'
 
-function Login() {
+export const Login =()=> {
     const [email, setEmail] = useState<string>("")
     const [password, setPassword] = useState<string>("")
 
@@ -16,6 +18,14 @@ function Login() {
         setPassword(event.target.value)
     }
 
+    const loginHandler=async()=>{
+        try {
+            await createUserWithEmailAndPassword(auth,email,password)
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
   return (
     <div className='Login-page'>
         <div className='top-side'>
@@ -51,6 +61,8 @@ function Login() {
         value={password}
         />
         </div>
+        
+        <button onClick={loginHandler}>Login</button>
        <Link className='forgot' to='./ForgottenPassword'> Forgot passcode? </Link>
        </div>
     </div>
